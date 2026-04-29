@@ -7,9 +7,6 @@ import cv2
 import numpy as np
 import torch
 
-import sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from bluestar.utils.save_utils import save_predict
 from bluestar.utils.config_utils import prepare_config
 from bluestar.utils.wandb_utils import set_wandb
@@ -17,7 +14,7 @@ from bluestar.utils.random_utils import set_seed
 from bluestar.utils.dist_utils import set_dist, is_distributed_set, is_master, barrier, get_world_size
 from bluestar.utils.print_utils import time_log
 from bluestar.utils.param_utils import count_params
-from wrapper import VGD
+from vgd.wrapper import VGD
 
 def inference_epoch(
         model: VGD,

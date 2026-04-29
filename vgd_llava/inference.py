@@ -8,9 +8,6 @@ import numpy as np
 import torch
 import torch.cuda.amp as amp
 from torch.nn.parallel.distributed import DistributedDataParallel
-import sys
-
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))))
 from bluestar.utils.save_utils import save_predict_ddp, save_predict
 from bluestar.utils.config_utils import prepare_config
 from bluestar.utils.wandb_utils import set_wandb
@@ -18,7 +15,7 @@ from bluestar.utils.random_utils import set_seed
 from bluestar.utils.dist_utils import set_dist, is_distributed_set, is_master, barrier, get_world_size
 from bluestar.utils.print_utils import time_log
 from bluestar.utils.param_utils import count_params
-from wrapper import VGD_llava
+from vgd_llava.wrapper import VGD_llava
 
 def inference_epoch(
         model: VGD_llava,
